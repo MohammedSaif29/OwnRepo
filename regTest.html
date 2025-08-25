@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>Registration Form</title>
+<script>
+function validateForm() {
+    let valid = true;
+
+    // Get values
+    var fullname = document.getElementById("fullname").value;
+    var phone = document.getElementById("phone").value;
+    var age = document.getElementById("age").value;
+    var gender = document.getElementById("gender").value;
+    var country = document.getElementById("country").value;
+
+    // Fullname validation
+    if (fullname.length == 0) {
+        document.getElementById("fullnameError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("fullnameError").style.display = "none";
+    }
+
+    // Phone validation
+    if (phone.length == 0 || isNaN(phone)) {
+        document.getElementById("phoneError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("phoneError").style.display = "none";
+    }
+
+    // Age validation
+    if (age.length == 0 || isNaN(age)) {
+        document.getElementById("ageError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("ageError").style.display = "none";
+    }
+
+    // Gender validation
+    if (gender == "") {
+        document.getElementById("genderError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("genderError").style.display = "none";
+    }
+
+    // Country validation
+    if (country == "") {
+        document.getElementById("countryError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("countryError").style.display = "none";
+    }
+
+    return valid;
+}
+</script>
+</head>
+<body>
+<h2>Registration Form</h2>
+<hr>
+<form onsubmit="return validateForm()">
+    <fieldset style="width: 300px; margin: 0px;">
+        <legend><strong>REGISTER</strong></legend>
+
+        <label>Fullname</label>
+        <input type="text" id="fullname">
+        <p style="color:red; display:none;" id="fullnameError">Please enter fullname</p>
+        <br><br>
+
+        <label>Phone Number</label>
+        <input type="text" id="phone">
+        <p style="color:red; display:none;" id="phoneError">Please enter a valid phone number</p>
+        <br><br>
+
+        <label>Age</label>
+        <input type="text" id="age">
+        <p style="color:red; display:none;" id="ageError">Please enter valid age</p>
+        <br><br>
+
+        <label>Gender</label>
+        <select id="gender">
+            <option value="">--Select--</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
+        </select>
+        <p style="color:red; display:none;" id="genderError">Please select gender</p>
+        <br><br>
+
+        <label>Country</label>
+        <select id="country">
+            <option value="">--Select--</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>China</option>
+        </select>
+        <p style="color:red; display:none;" id="countryError">Please select country</p>
+        <br><br>
+
+        <input type="submit" value="Submit">&nbsp;
+        <input type="reset" value="Reset">
+
+        <ol>
+            <li><a href="login page.html">Login</a></li>
+        </ol>
+    </fieldset>
+</form>
+</body>
+</html>

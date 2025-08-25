@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>FED</title>
+<script>
+function myfunc(){
+    var u = document.getElementById("username").value;
+    var p = document.getElementById("password").value;
+
+    let valid = true;
+
+    if (u.length == 0) {
+        document.getElementById("usererror").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("usererror").style.display = "none";
+    }
+
+    if (p.length == 0) {
+        document.getElementById("passworderror").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("passworderror").style.display = "none";
+    }
+
+    return valid;
+}
+</script>
+</head>
+<body>
+
+    <h1 style="color:gray; text-align:center;">Login Page</h1>
+    <hr>
+    <div style="text-align:center;">
+    </div>
+
+    <form onsubmit="return myfunc()">
+        <fieldset style="width: 300px; margin: auto;">
+            <legend><strong>Login</strong></legend>
+
+            <label for="username">Username:</label> <br>
+            <input type="text" id="username" name="username">
+            <p style="color:red; display:none;" id="usererror">Please enter username</p><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password">
+            <p style="color:red; display:none;" id="passworderror">Please enter password</p><br><br>
+
+            <input type="submit" value="Submit">&nbsp;&nbsp;
+            <input type="reset" value="Reset">
+
+            <ol>
+                <ul><a href="registration form.html">Register</a></ul>
+            </ol>
+        </fieldset>
+    </form>
+</body>
+</html>
