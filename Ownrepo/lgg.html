@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Registration Page</title>
+<style>
+* {
+  margin: 2;
+  padding: 7;
+}
+.error {
+  color: red;
+  display: none;
+}
+</style>
+</head>
+<body>
+<h1>REGISTRATION PAGE</h1>
+
+<form>
+<fieldset>
+<legend style="background-color:gray">Register Here</legend>
+
+<label>Full Name:</label>
+<input type="text" id="fullname" onkeyup="validation()">
+<p class="error" id="fullnameError">Please enter your full name</p>
+<br>
+
+<label>Email:</label>
+<input type="email" id="email" onkeyup="validation()">
+<p class="error" id="emailError">Please enter your email</p>
+<br>
+
+<label>Phone Number:</label>
+<input type="tel" id="phone" onkeyup="validation()">
+<p class="error" id="phoneError">Please enter your phone number</p>
+<br>
+
+<label>Username:</label>
+<input type="text" id="username" onkeyup="validation()">
+<p class="error" id="usernameError">Please enter a username</p>
+<br>
+
+<label>Password:</label>
+<input type="password" id="password" onkeyup="validation()">
+<p class="error" id="passwordError">Please enter a password</p>
+<br>
+
+<label>Gender:</label>
+<input type="radio" name="gender" value="Male" onclick="validation()"> Male
+<input type="radio" name="gender" value="Female" onclick="validation()"> Female
+<input type="radio" name="gender" value="Other" onclick="validation()"> Other
+<p class="error" id="genderError">Please select your gender</p>
+<br><br>
+
+<script>
+function validation() {
+    var user = {
+        fullname: document.getElementById("fullname").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value,
+        gender: document.querySelector('input[name="gender"]:checked')
+    };
+
+    var check = false;
+    for (var key in user) {
+        if (!user[key]) {
+            check = true;
+        }
+    }
+    if (check) {
+        document.querySelector("button").setAttribute("disabled", true);
+    } else {
+        document.querySelector("button").removeAttribute("disabled");
+    }
+}
+</script>
+
+<button type="button" onclick="alert('Registration Successful!')" disabled>Register</button>
+<input type="reset" value="Reset" onclick="validation()">
+
+</fieldset>
+</form>
+</body>
+</html>
