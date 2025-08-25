@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>FED</title>
+<script>
+function myfunc(){
+    var u = document.getElementById("username").value;
+    var p = document.getElementById("password").value;
+
+    if (u.length == 0) {
+        document.getElementById("usererror").style.display = "block";
+    } else {
+        document.getElementById("usererror").style.display = "none";
+    }
+
+    if (p.length == 0) {
+        document.getElementById("passworderror").style.display = "block";
+    } else {
+        document.getElementById("passworderror").style.display = "none";
+    }
+
+}
+</script>
+</head>
+<body>
+
+    <h1 style="color:gray; text-align:center;">Login Page</h1>
+
+    <marquee><h2 style="color:green;">Welcome to the HTML login page</h2></marquee>
+    <hr>
+    <div style="text-align:center;">
+        <img src="my photo.JPEG" alt="Login Image" width="200" height="200">
+    </div>
+    <form onsubmit="return myfunc()">
+        <fieldset style="width: 300px; margin: auto;">
+            <legend><strong>Login</strong></legend>
+
+            <label for="username">Username:</label> <br>
+            <input type="text" id="username" name="username">
+            <p style="color:blue; display:none;" id="usererror">Please enter username</p><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"> 
+            <p style="color:blue; display:none;" id="passworderror">Please enter password</p><br><br>
+
+            <input type="submit" value="Submit">&nbsp;&nbsp;
+            <input type="reset" value="Reset">
+
+            <ol>
+                <ul><a href="registration form.html">Register</a></ul>
+            </ol>
+        </fieldset>
+    </form>
+</body>
+</html>
